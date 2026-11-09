@@ -96,6 +96,17 @@ eksctl create nodegroup --cluster=observability \
                         --alb-ingress-access \
                         --node-private-networking
 
+eksctl create nodegroup \
+  --cluster observability \
+  --region us-east-1 \
+  --name observability-workers \
+  --node-type t3.medium \
+  --nodes 2 \
+  --nodes-min 2 \
+  --nodes-max 3 \
+  --managed \
+  --node-ami-family AmazonLinux2023
+
 # Update ./kube/config file
 aws eks update-kubeconfig --name observability
 ```
