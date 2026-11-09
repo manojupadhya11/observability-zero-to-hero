@@ -117,6 +117,14 @@ helm install monitoring prometheus-community/kube-prometheus-stack \
 -n monitoring \
 -f ./custom_kube_prometheus_stack.yml
 ```
+### or run the below command
+```bash
+helm install monitoring \
+  oci://ghcr.io/prometheus-community/charts/kube-prometheus-stack \
+  -n monitoring \
+  --create-namespace \
+  -f ./custom_kube_prometheus_stack.yml
+```
 
 ### ✅ Step 4: Verify the Installation
 ```bash
