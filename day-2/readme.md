@@ -137,6 +137,10 @@ helm install monitoring \
   -f ./custom_kube_prometheus_stack.yml
 ```
 
+```bash
+helm upgrade --install monitoring   \
+prometheus-community/kube-prometheus-stack  --version 93.1.0   --namespace monitoring   --create-namespace   -f custom_kube_prometheus_stack.yml   --timeout 15m   --wait
+```
 ### ✅ Step 4: Verify the Installation
 ```bash
 kubectl get all -n monitoring
